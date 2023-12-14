@@ -1,7 +1,12 @@
 package com.sopa.appmvvmdiaz.users
 
+import com.sopa.appmvvmdiaz.login.LoginModel
+import com.sopa.appmvvmdiaz.login.LoginProvider
+
 class UserProvider {
     companion object{
+
+
         fun random(): UsersModel {
             val position = (0..10).random()
             return user[position]

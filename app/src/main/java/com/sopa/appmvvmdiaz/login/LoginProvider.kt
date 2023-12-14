@@ -4,6 +4,16 @@ class LoginProvider {
 
     companion object {
 
+        fun checkUser(usuari: String,contrasenya: String): Boolean {
+
+            val value = LoginModel (
+                user = usuari,
+                password = contrasenya
+            )
+            return logins.contains(value)
+
+        }
+
         private val logins = listOf(
             LoginModel(
                 user = "enaitz",
@@ -45,3 +55,5 @@ class LoginProvider {
 
     }
 }
+
+
