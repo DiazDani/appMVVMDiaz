@@ -11,6 +11,7 @@ import com.sopa.appmvvmdiaz.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     private val viewModel: ListViewModel by viewModels()
+    private val sharedViewModel:SharedViewModel by viewModels()
     private lateinit var binding: FragmentListBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,8 +19,10 @@ class ListFragment : Fragment() {
     ): View? {
         binding= FragmentListBinding.inflate(inflater)
 
+        val recentUser= sharedViewModel.message.toString()
 
-        viewModel.randomUser()
+        viewModel.findUser(recentUser)
+
         binding.textView.text= viewModel.nom
         binding.textView2.text=viewModel.edat.toString()
         binding.textView3.text=viewModel.mail

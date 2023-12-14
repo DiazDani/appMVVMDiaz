@@ -2,7 +2,6 @@ package com.sopa.appmvvmdiaz
 
 import androidx.lifecycle.ViewModel
 import com.sopa.appmvvmdiaz.users.UserProvider
-import com.sopa.appmvvmdiaz.users.UsersModel
 
 class ListViewModel : ViewModel() {
     private var _nom = ""
@@ -22,7 +21,13 @@ class ListViewModel : ViewModel() {
 
 
     fun findUser(name: String){
-        UserProvider
+       val welcomeUser= UserProvider.findUser(name)
+        if (welcomeUser != null) {
+            _nom=welcomeUser.name
+            _edat=welcomeUser.age
+            _mail=welcomeUser.mail
+        }
+
     }
 
     fun randomUser(){

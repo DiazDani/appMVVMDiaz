@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
                sharedViewModel.sendMessage(binding.editTextUser.text.toString())
 
                 findNavController().navigate(R.id.action_homeFragment_to_listFragment, null)
-                Toast.makeText(activity, "Welcome", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, sharedViewModel.message.toString(), Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(activity,"codigo incorrecto", Toast.LENGTH_SHORT).show()
             }
